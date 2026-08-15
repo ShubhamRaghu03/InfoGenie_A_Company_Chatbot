@@ -1,5 +1,5 @@
-# Chaneg "Company Name" to the actual company name you are building the chatbot for.
-# Throughout the code, replace "Company Name" with the actual name.
+# Chaneg "InfoGenie" to the actual InfoGenie you are building the chatbot for.
+# Throughout the code, replace "InfoGenie" with the actual name.
 # This is a FastAPI backend combined with a Streamlit frontend for a chatbot using LangChain and Groq LLM.
 # You should have a config.json file in the same directory with your GROQ_API_KEY.
 # Make sure to install all required packages:
@@ -71,7 +71,7 @@ async def chatbot(request: MessageRequest):
 
     # Check for sensitive topics
     if contains_sensitive_topics(message):
-        response = "It seems you may be asking questions outside my context, please ask questions related to Company Name only."
+        response = "It seems you may be asking questions outside my context, please ask questions related to InfoGenie only."
     else:
         # Get response from the conversational chain
         response = conversational_chain({"question": message})["answer"]
@@ -79,13 +79,13 @@ async def chatbot(request: MessageRequest):
     return {"response": response}
 
 # Default prompts
-DEFAULT_SYSTEM_PROMPT = """You are a **specialized AI assistant** dedicated exclusively to **Company Name** and its services. Your responses must be **accurate, concise, and strictly based on Company Name’s verified data**.
+DEFAULT_SYSTEM_PROMPT = """You are a **specialized AI assistant** dedicated exclusively to **InfoGenie** and its services. Your responses must be **accurate, concise, and strictly based on InfoGenie’s verified data**.
 
 Your goals:
 
 1. Quickly understand the user’s needs with **minimal follow-up questions**.
-2. Provide **clear, concise, helpful answers** using Company Name data.
-3. Suggest **relevant Company Name services** when appropriate.
+2. Provide **clear, concise, helpful answers** using InfoGenie data.
+3. Suggest **relevant InfoGenie services** when appropriate.
 4. Maintain a **warm, professional, and empathetic tone**.
 
 ---
@@ -105,11 +105,11 @@ Before giving detailed answers, ask the **fewest possible follow-up questions** 
 
 ---
 
-#### **PHASE 2 - RESPOND USING USER DATA + Company Name DATA**
+#### **PHASE 2 - RESPOND USING USER DATA + InfoGenie DATA**
 
 Once you have the key answers:
 
-* Use the user data + Company Name data only.
+* Use the user data + InfoGenie data only.
 * Deliver clear, short, and high-value responses.
 * Use bullet points for readability.
 * Add **1–3 relevant emojis** to support tone.
@@ -120,7 +120,7 @@ Once you have the key answers:
 
 After the main answer:
 
-* Suggest **1–2 Company Name services** that match the user’s needs.
+* Suggest **1–2 InfoGenie services** that match the user’s needs.
 * Example phrasing:
 
   > “Since you plan a new website, you might also benefit from our SEO services to improve visibility.”
@@ -129,9 +129,9 @@ After the main answer:
 
 ### **CONTEXT & RESPONSE RULES**
 
-1. If provided context contains relevant Company Name info → build on it.
-2. If context is empty or irrelevant → politely inform the user you can only discuss Company Name topics.
-3. Always answer using **verified Company Name data** only.
+1. If provided context contains relevant InfoGenie info → build on it.
+2. If context is empty or irrelevant → politely inform the user you can only discuss InfoGenie topics.
+3. Always answer using **verified InfoGenie data** only.
 
 ---
 
@@ -145,14 +145,14 @@ After the main answer:
 """
 
 DEFAULT_NEGATIVE_PROMPT = """
-- Do **NOT** provide any information that is **not supported by verified Company Name data** or the provided system context.
-- Do **NOT** imply you are an **employee, representative, agent, or official spokesperson** of Company Name.
-- Do **NOT** fabricate or invent Company Name **services, features, pricing, policies, internal processes, or proprietary details**.
-- Do **NOT** offer **legal, financial, medical, or other unrelated professional advice** outside Company Name’s domain.
-- Do **NOT** respond to topics **outside Company Name’s scope**; instead, politely state that the relevant data is not available.
-- Do **NOT** guess or assume **confidential, internal, or sensitive business information** about Company Name.
-- Do **NOT** generate speculative, generic, or hypothetical business advice that is **not grounded in Company Name’s verified information**.
-- Do **NOT** use, cite, or reference **external sources, external knowledge, or outside databases** beyond the authorized Company Name context.
+- Do **NOT** provide any information that is **not supported by verified InfoGenie data** or the provided system context.
+- Do **NOT** imply you are an **employee, representative, agent, or official spokesperson** of InfoGenie.
+- Do **NOT** fabricate or invent InfoGenie **services, features, pricing, policies, internal processes, or proprietary details**.
+- Do **NOT** offer **legal, financial, medical, or other unrelated professional advice** outside InfoGenie’s domain.
+- Do **NOT** respond to topics **outside InfoGenie’s scope**; instead, politely state that the relevant data is not available.
+- Do **NOT** guess or assume **confidential, internal, or sensitive business information** about InfoGenie.
+- Do **NOT** generate speculative, generic, or hypothetical business advice that is **not grounded in InfoGenie’s verified information**.
+- Do **NOT** use, cite, or reference **external sources, external knowledge, or outside databases** beyond the authorized InfoGenie context.
 - Do **NOT** insert personal opinions, assumptions, unfounded claims, or subjective judgments.
 - Do **NOT** mislead the user with unsupported or speculative responses.
 - Do **NOT** use an unprofessional, casual, or overly familiar tone; maintain professionalism at all times.
@@ -220,7 +220,7 @@ Answer:"""
     return chain
 
 st.set_page_config(
-    page_title="Chat with Company Name's Chatbot",
+    page_title="Chat with InfoGenie's Chatbot",
     page_icon="🧠",
     layout="wide",  # Changed to wide layout to accommodate sidebar
 )
@@ -252,7 +252,7 @@ with st.sidebar:
     st.markdown("## Description")
     st.markdown("""
         <div class="css-textbarboxtype">
-            An AI-powered chatbot designed to provide answers related to Company Name.
+            An AI-powered chatbot designed to provide answers related to InfoGenie.
         </div>
     """, unsafe_allow_html=True)
     
@@ -271,7 +271,7 @@ with st.sidebar:
     st.markdown("## Purpose")
     st.markdown("""
         <div class="css-textbarboxtype">
-            Designed as a seamless, user-friendly entry point to Company Name'S support system, this chatbot helps users easily access accurate information without confusion or hesitation. Whether users have questions about products, services, policies, or general assistance, the chatbot provides clear explanations, reliable guidance, and context-aware responses powered by Company Name'S verified knowledge base. By simplifying interactions and delivering timely, trustworthy answers, it enhances user experience and smoothly connects them to human support representatives whenever needed.
+            Designed as a seamless, user-friendly entry point to InfoGenie'S support system, this chatbot helps users easily access accurate information without confusion or hesitation. Whether users have questions about products, services, policies, or general assistance, the chatbot provides clear explanations, reliable guidance, and context-aware responses powered by InfoGenie'S verified knowledge base. By simplifying interactions and delivering timely, trustworthy answers, it enhances user experience and smoothly connects them to human support representatives whenever needed.
         </div>
     """, unsafe_allow_html=True)
     
@@ -320,7 +320,7 @@ with st.sidebar:
                 
                 # PDF Header
                 pdf.set_font('Arial', 'B', 16)
-                pdf.cell(0, 10, "Company Name Chatbot - Conversation History", ln=True, align='C')
+                pdf.cell(0, 10, "InfoGenie Chatbot - Conversation History", ln=True, align='C')
                 pdf.set_font('Arial', '', 12)
                 pdf.cell(0, 10, f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", ln=True, align='C')
                 pdf.ln(10)
@@ -360,7 +360,7 @@ with st.sidebar:
 # Main chat interface
 # Add header image
 
-st.title("🧠 Company Name Chatbot")
+st.title("🧠 InfoGenie Chatbot")
 
 #st.image("https://img.freepik.com/premium-vector/mental-health-awareness-month-take-care-your-body-take-care-your-health-increase-awareness_758894-821.jpg?w=1380", use_column_width=True)
 
@@ -387,7 +387,7 @@ for message in st.session_state.chat_history:
         st.markdown(message["content"])
 
 # Chat input
-user_input = st.chat_input("Ask a question about Company Name")
+user_input = st.chat_input("Ask a question about InfoGenie")
 
 if user_input:
     st.session_state.chat_history.append({"role": "user", "content": user_input})
