@@ -48,10 +48,13 @@ def remove_emojis(text):
     return emoji_pattern.sub(r'', text)
 
 working_dir = os.path.dirname(os.path.realpath(__file__))
-config_data = json.load(open(f"{working_dir}/config.json"))
+config_data = {
+    "GROQ_API_KEY": st.secrets["GROQ_API_KEY"],
+    "COMPANY_NAME": st.secrets["COMPANY_NAME"]
+}
+
 GROQ_API_KEY = config_data["GROQ_API_KEY"]
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
-
 # FastAPI app and Pydantic model for API input
 app = FastAPI()
 
