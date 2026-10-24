@@ -551,5 +551,5 @@ For sensitive inquiries, always escalate to appropriate human representatives.
 
 ---
 
-**Last Updated**: December 2025  
+**Last Updated**: August 2026  
 **Version**: 1.0.0
