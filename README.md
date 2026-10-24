@@ -538,9 +538,9 @@ For sensitive inquiries, always escalate to appropriate human representatives.
 
 ## Contact
 
-- 📧 Email: [shahdeep1406@gmail.com](mailto:shahdeep1406@gmail.com)
-- 🐙 GitHub: [DeepShah1406](https://github.com/DeepShah1406)
-- 💼 LinkedIn: [deepshah1406](https://www.linkedin.com/in/deepshah1406)
+- 📧 Email: shubham0112it221062@gmail.com
+- 🐙 GitHub: https://github.com/ShubhamRaghu03
+- 💼 LinkedIn: www.linkedin.com/in/shubham-raghuwanshi-4a7b59279
 
 ---
 
